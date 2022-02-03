@@ -72,7 +72,7 @@ var pause = () => {
 }
 
 // Features from GeoJSON Summary Format.
-// http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+// https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
 var features$ = new Rx.ReplaySubject(1)
 // JSONP callback.
 function eqfeed_callback(data) {
@@ -196,7 +196,6 @@ var sun$ = renderTime$.scan((sun, t) => {
 }, Object.assign(new THREE.SpotLight(0xffffff, 0.8), {decay: 0}))
 
 // Load texture as observable.
-THREE.ImageUtils.crossOrigin = ''
 function loadTexture$(url) {
   return Rx.Observable.create((observer) => {
     new THREE.TextureLoader().load(url,
